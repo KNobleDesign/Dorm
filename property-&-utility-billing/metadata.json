@@ -1,0 +1,8 @@
+{
+  "name": "Property & Utility Billing",
+  "description": "Comprehensive property, utility meter entry, and automated PDF invoice management system with Firebase Realtime sync and Google Apps Script integration.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
