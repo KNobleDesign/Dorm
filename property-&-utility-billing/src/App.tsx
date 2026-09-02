@@ -1,4 +1,5 @@
 import { db } from './firebase';
+import { doc, setDoc } from 'firebase/firestore';
 import React, { useState, useEffect } from 'react';
 import { Sidebar } from './components/Sidebar';
 import { DashboardView } from './components/DashboardView';
@@ -1756,3 +1757,14 @@ export default function App() {
     </div>
   );
 }
+import { doc, setDoc } from 'firebase/firestore';
+
+window.addEventListener('storage', (e) => {
+  if (e.key && e.newValue) {
+    setDoc(doc(db, "dorms", "live_data"), { 
+      key: e.key, 
+      data: JSON.parse(e.newValue),
+      updatedAt: new Date()
+    }, { merge: true });
+  }
+});
