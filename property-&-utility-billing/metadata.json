@@ -1,8 +1,0 @@
-{
-  "name": "Property \u0026 Utility Billing",
-  "description": "Comprehensive property, utility meter entry, and automated PDF invoice management system for Google Apps Script and Google Sheets.",
-  "requestFramePermissions": [],
-  "majorCapabilities": [
-    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
-  ]
-}
