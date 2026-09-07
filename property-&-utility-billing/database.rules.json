@@ -1,0 +1,11 @@
+{
+  "rules": {
+    "dorm_app": {
+      ".read": true,
+      ".write": true
+    },
+    ".info": {
+      ".read": true
+    }
+  }
+}
