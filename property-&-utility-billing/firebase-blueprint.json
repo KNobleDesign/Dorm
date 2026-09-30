@@ -1,0 +1,92 @@
+{
+  "entities": {
+    "Building": {
+      "title": "Building",
+      "description": "Building profile and configuration",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "totalUnits": { "type": "number" },
+        "location": { "type": "string" },
+        "floors": { "type": "number" },
+        "defaultWaterRate": { "type": "number" },
+        "defaultElecRate": { "type": "number" }
+      },
+      "required": ["id", "name"]
+    },
+    "DormConfig": {
+      "title": "DormConfig",
+      "description": "Master landlord settings",
+      "type": "object",
+      "properties": {
+        "propertyName": { "type": "string" },
+        "landlordName": { "type": "string" },
+        "phone": { "type": "string" },
+        "promptPayId": { "type": "string" },
+        "waterRateDefault": { "type": "number" },
+        "elecRateDefault": { "type": "number" }
+      },
+      "required": ["propertyName"]
+    },
+    "MonthlyRecord": {
+      "title": "MonthlyRecord",
+      "description": "Monthly room meter and billing records",
+      "type": "object",
+      "properties": {
+        "monthKey": { "type": "string" },
+        "monthName": { "type": "string" },
+        "rooms": { "type": "string" }
+      },
+      "required": ["monthKey"]
+    },
+    "Expense": {
+      "title": "Expense",
+      "description": "Operating expense record",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "building": { "type": "string" },
+        "title": { "type": "string" },
+        "category": { "type": "string" },
+        "amount": { "type": "number" },
+        "date": { "type": "string" }
+      },
+      "required": ["id", "title", "amount"]
+    },
+    "AppUser": {
+      "title": "AppUser",
+      "description": "Application user account",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "role": { "type": "string" },
+        "pin": { "type": "string" }
+      },
+      "required": ["id", "name", "role"]
+    }
+  },
+  "firestore": {
+    "/dorm_config/{document}": {
+      "schema": "DormConfig",
+      "description": "Master settings"
+    },
+    "/buildings/{buildingId}": {
+      "schema": "Building",
+      "description": "Buildings collection"
+    },
+    "/monthly_records/{monthKey}": {
+      "schema": "MonthlyRecord",
+      "description": "Monthly room and billing records"
+    },
+    "/expenses/{expenseId}": {
+      "schema": "Expense",
+      "description": "Property operating expenses"
+    },
+    "/users/{userId}": {
+      "schema": "AppUser",
+      "description": "Application user accounts"
+    }
+  }
+}
